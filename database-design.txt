@@ -1,0 +1,31 @@
+Product
+- ProductID
+- name
+- price
+- description
+- image
+- stock
+
+User
+- UserID
+- email
+- password
+- name
+- phoneNumber
+- address
+
+Cart
+- CartID
+- UserID
+- ProductID
+- Quantity
+
+Transaction
+- TransactionID
+- UserID
+- Timestamp
+
+TransactionDetail
+- TransactionID
+- ProductID
+- Quantity

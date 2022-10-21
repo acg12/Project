@@ -1,0 +1,9 @@
+.page-footer {
+    border-top: 1px solid black;
+    padding: 50px 0;
+    margin: 50px auto;
+}
+
+.form-control {
+    border:black solid 1px;
+}

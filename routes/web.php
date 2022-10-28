@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
 Route::get('/login', function () {
@@ -26,4 +27,8 @@ Route::get('/register', function () {
     return view('register');
 });
 
+Route::get('/products', [ProductController::class, 'showProducts']);
+Route::get('/search', [ProductController::class, 'search']);
+
 Route::post('/login', [UserController::class, 'login']);
+Route::post('/register', [UserController::class, 'register']);

@@ -24,7 +24,7 @@
                         <a class="nav-link" href="/">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Products</a>
+                        <a class="nav-link" href="/products">Products</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/login">Login</a>
@@ -34,8 +34,8 @@
                     </li>
                 </ul>
             </div>
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <form action="/search" class="d-flex" role="search">
+                <input class="form-control me-2" type="search" name="search" placeholder="Search" aria-label="Search" value="@yield('search')">
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
         </div>

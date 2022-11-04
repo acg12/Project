@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -29,6 +30,8 @@ Route::get('/register', function () {
 
 Route::get('/products', [ProductController::class, 'showProducts']);
 Route::get('/search', [ProductController::class, 'search']);
+Route::get('/products/{id}', [ProductController::class, 'productDetails']);
 
 Route::post('/login', [UserController::class, 'login']);
 Route::post('/register', [UserController::class, 'register']);
+Route::post('/addToCart/{id}', [CartController::class, 'addToCart']);

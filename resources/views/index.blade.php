@@ -7,5 +7,7 @@
 @section('title', 'TechSupply | Home Page')
 
 @section('content')
-    
+    @if(Auth::check())
+        <strong>Logged in</strong>
+    @endif
 @endsection

@@ -24,10 +24,10 @@ class UserController extends Controller
             $email = $req->email;
             $password = $req->password;
 
-            if(Auth::attempt(['email' => $email, 'password' => $password])){
-                return redirect()->route('/');
+            if(Auth::attempt(['email' => $email, 'password' => $password], true)){
+                return redirect('/');
             }else{
-                return redirect()->back();
+                return redirect()->back()->withErrors(['Incorrect email or password']);
             }
 
             // disini nti bikin if authentication succeed, maka kita akan bikin
@@ -68,7 +68,7 @@ class UserController extends Controller
                 'updated_at' => Carbon::now()
             ]);
 
-            return redirect()->route('/');
+            return redirect('/');
         }
 
     }

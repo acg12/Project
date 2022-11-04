@@ -21,10 +21,12 @@ class UserController extends Controller
         if($validator->fails()) {
             return back()->withErrors($validator);
         } else {
-            $email = $req->email;
-            $password = $req->password;
+            $credentials = [
+                'email' => $req->email,
+                'password' => $req->password
+            ];
 
-            if(Auth::attempt(['email' => $email, 'password' => $password], true)){
+            if(Auth::attempt($credentials)){
                 return redirect('/');
             }else{
                 return redirect()->back()->withErrors(['Incorrect email or password']);
@@ -61,7 +63,7 @@ class UserController extends Controller
             DB::table('users')->insert([
                 'name' => $name,
                 'email' => $email,
-                'password' => $password,
+                'password' => bcrypt($password),
                 'phone_number' => $phone,
                 'address' => $address,
                 'created_at' => Carbon::now(),

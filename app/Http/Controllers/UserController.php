@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Cookie;
+use Illuminate\Support\Facades\Session;
 
 class UserController extends Controller
 {
@@ -27,6 +30,12 @@ class UserController extends Controller
             ];
 
             if(Auth::attempt($credentials)){
+                if($req->remember){
+                    Cookie::queue('mycookie', $req->email, 60); //param3: satuan menit
+                }else{
+                    Cookie::queue(Cookie::forget('mycookie'));
+                }
+                Session::put('mysession', $credentials);
                 return redirect('/');
             }else{
                 return redirect()->back()->withErrors(['Incorrect email or password']);
@@ -54,24 +63,20 @@ class UserController extends Controller
         if($validator->fails()){
             return back()->withErrors($validator);
         } else {
-            $name = $req->name;
-            $email = $req->email;
-            $password = $req->password;
-            $phone = $req->phone;
-            $address = $req->address;
-
-            DB::table('users')->insert([
-                'name' => $name,
-                'email' => $email,
-                'password' => bcrypt($password),
-                'phone_number' => $phone,
-                'address' => $address,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now()
-            ]);
+            $user = new User();
+            $user->name = $req->name;
+            $user->email = $req->email;
+            $user->password = $req->password;
+            $user->phone_number = $req->phone;
+            $user->address = $req->address;
+            $user->save();
 
             return redirect('/');
         }
+    }
 
+    public function logout() {
+        Auth::logout();
+        return redirect('/login');
     }
 }

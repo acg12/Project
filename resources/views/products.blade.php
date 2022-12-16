@@ -9,8 +9,8 @@
     @if(count($data) == 0)
         <div>No products "{{ $search_query }}" found</div>
     @else
-    @for($i = 0; $i < count($data); $i++) 
     <div class="row row-cols-1 row-cols-md-3 g-4">
+        @for($i = 0; $i < count($data); $i++) 
         <div class="col">
             <div class="card">
                 <img src="{{ $data[$i]->image_url }}" class="card-img-top" alt="...">
@@ -21,8 +21,8 @@
                 </div>
             </div>
         </div>
+        @endfor
     </div>
-    @endfor
     @endif
 
 @endsection

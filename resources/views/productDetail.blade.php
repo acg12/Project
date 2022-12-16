@@ -25,8 +25,7 @@
                 <p class="card-text">STOCK: {{ $p->stock }}</p>
             </div>
         </div>
-        <form action="/addToCart/{{ $p->id }}" method="POST" id="form-container">
-            @csrf
+        <form action="/addToCart/{{ $p->id }}" id="form-container">
             <div class="row">
                 <div class="col-lg-2">
                     <input type="number" value="1" min="1" max="{{ $p->stock }}" class="form-control input-lg" name="quantity" id="quantity">

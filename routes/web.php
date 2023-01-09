@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -36,6 +37,7 @@ Route::get('/cart', [CartController::class, 'showCart'])->middleware('security')
 Route::get('/addToCart/{id}', [CartController::class, 'addToCart'])->middleware('security');
 Route::get('/deleteCart/{id}', [CartController::class, 'deleteCart'])->middleware('security');
 Route::get('/updateCart/{id}', [CartController::class, 'updateQuantity'])->middleware('security');
+Route::get('/checkout/{id}', [TransactionController::class, 'checkout'])->middleware('security');
 
 Route::post('/login', [UserController::class, 'login'])->middleware('guestSecurity');
 Route::post('/register', [UserController::class, 'register'])->middleware('guestSecurity');

@@ -20,6 +20,7 @@ class CreateProductsTable extends Migration
             $table->string('description');
             $table->string('image_url');
             $table->integer('stock');
+            $table->timestamps();
         });
     }
 

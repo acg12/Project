@@ -3,9 +3,14 @@
 @section('title', 'TechSupply | Cart')
 
 @section('content')
-<div class="d-flex flex-column">
+<div class="d-flex flex-column px-5 py-3">
+    @if($errors->any())
+    <div class="alert alert-danger d-flex align-items-center" role="alert">
+        {{ $errors->first() }}
+    </div>
+    @endif
     @foreach ($cart as $c)
-    <div class="d-flex flex-row">
+    <div class="d-flex flex-row align-items-center pb-3">
         <div class="">
             <img style="width: 300px;" src="{{ $c->product->image_url }}" alt="...">
         </div>
@@ -15,7 +20,7 @@
         </div>
         <div style="margin-right: 20px;">
             <form action="/updateCart/{{ $c->id }}">
-                <input type="text" name="qty" value="{{ $c->quantity }}" style="width:30px; height:35px; text-align: center;">
+                <input type="number" id="qty" name="qty" value="{{ $c->quantity }}" style="width:5vw; height:35px; text-align: center;">
                 <button type="submit" class="btn btn-primary">Update</button>
             </form>
         </div>
@@ -24,5 +29,8 @@
         </a>
     </div>
     @endforeach
+</div>
+<div class="list-group container-fluid d-flex flex-row text-center">
+    <a href="/checkout/{{ Auth::user()->id }}" class="list-group-item list-group-item-action">Checkout</a>
 </div>
 @endsection

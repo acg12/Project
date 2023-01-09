@@ -1,9 +1,43 @@
+body {
+    overflow-x: hidden;
+}
+
+nav {
+    border-bottom: solid 1px lightgray;
+}
+
 .page-footer {
-    border-top: 1px solid black;
+    border-top: 1px solid lightgray;
     padding: 50px 0;
     margin: 50px auto;
 }
 
 .form-control {
     border:black solid 1px;
+}
+
+.dropdown-menu {
+    display: relative;
+    top: 32px;
+}
+
+#search-bar {
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid black;
+}
+
+a, a:hover {
+    color: black;
+}
+
+#btn-shop {
+    border-radius: 25px;
+    color: white;
+    background: black;
+    border: none;
+}
+
+.btn:hover {
+    background-color: #34D84A;
 }

@@ -12,7 +12,7 @@
                 <h2 class="card-title">{{ $p->name }}</h2>
             </div>
             <div class="col-lg-4">
-                <h3 class="card-title">Rp. {{ $p->price }}</h3>
+                <h3 class="card-title">Rp {{ $p->price }}</h3>
             </div>
         </div>
         <div class="row">

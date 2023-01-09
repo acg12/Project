@@ -1,0 +1,57 @@
+.banner {
+    position: relative;
+}
+
+.banner img {
+    width: 100vw;
+    object-fit: cover;
+}
+
+.banner-title {
+    font-size: 6vw;
+}
+
+.banner-caption {
+    font-size: 2vw;
+}
+
+.banner-text {
+    position: absolute;
+    height: 100%;
+}
+
+#btn-shop-banner {
+    font-size: 1.5vw;
+    border-radius: 25px;
+    color: white;
+    background: black;
+    border: none;
+}
+
+.btn-card-reviews {
+    width: 100%;
+    border-radius: 25px;
+    border: none;
+    background-color: black;
+}
+
+.reviews {
+    padding: 10vw 5vw;
+}
+
+.reviews-text {
+    width: 14rem;
+}
+
+.card {
+    width: 18rem;
+    border-radius: 0;
+    border: 1px solid black;
+}
+
+.card-img {
+    border-radius: 0;
+    padding: 32px;
+    height: 10rem;
+    object-fit: cover;
+}

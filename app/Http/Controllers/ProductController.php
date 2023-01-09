@@ -39,7 +39,10 @@ class ProductController extends Controller
             $product = Product::find($item->product_id);
             $product->stock -= $item->quantity;
             $product->save();
-        }
-        
+        }   
+    }
+
+    public static function getBestSelling($n) {
+        return Product::withCount('transactionDetails')->orderBy('transaction_details_count', 'desc')->limit($n)->get();
     }
 }

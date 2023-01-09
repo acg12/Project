@@ -18,4 +18,8 @@ class Product extends Model
     {
         return $this->hasMany(TransactionDetail::class, 'product_id', 'id');
     }
+
+    public function getPrice() {
+        return number_format($this->price, 0, ',', '.');
+    }
 }

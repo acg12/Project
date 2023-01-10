@@ -1,40 +1,48 @@
 @extends('template')
 
+@if($p == null)
+@section('title', 'Unknown | Details | TechSupply')
+@else
 @section('title', $p->name.' | Details | TechSupply')
+@endif
+
+@section('css')
+<link rel="stylesheet" href="{{ asset('css/productDetail.css') }}">
+@endsection
 
 @section('content')
-@if($p != null)
-<div class="d-flex flex-row justify-content-stretch align-items-center" style="padding-top: 50px">
-    <img id="item-img" width="50%" src="{{ $p->image_url }}" alt="">
-    <div class="container-fluid">
-        <div class="row d-flex flex-row align-items-center">
-            <div class="col-lg-8">
-                <h2 class="card-title">{{ $p->name }}</h2>
-            </div>
-            <div class="col-lg-4">
-                <h3 class="card-title">Rp {{ $p->price }}</h3>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-10">
-                <p class="card-text">{{ $p->description }}</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-4">
-                <p class="card-text">STOCK: {{ $p->stock }}</p>
-            </div>
-        </div>
+@if($p == null)
+<div class="text-center p-5" style="height: 60vh;">
+    <p class="fs-5 fw-light">
+        Uh-oh! Looks like this item isn't available yet!
+    </p>
+    <h3 class="my-4">Check out our full catalogue here!</h3>
+    <a class="btn-shop btn btn-primary" href="/products" role="button">
+        <h5 class="fw-light">Shop Now</h5>
+    </a>
+</div>
+@else
+<div class="row">
+    <div class="col-6 col-sm-12 col-lg-6 p-5">
+        <img id="item-img" width="100%" src="{{ $p->image_url }}" alt="">
+    </div>
+    <div class="col-6 col-sm-12 col-lg-6 d-flex flex-column justify-content-center p-5">
+        <h1 class="card-title pb-4">{{ $p->name }}</h1>
+        <p class="card-text">{{ $p->description }}</p>
+        <p class="card-text stock ps-3">{{ $p->stock }} left available in stock</p>
+        <p class="card-title fw-bold pb-3">Rp {{ $p->getPrice() }} one-time purchase</p>
+
         <form action="/addToCart/{{ $p->id }}" id="form-container">
             <div class="row">
                 <div class="col-lg-2">
                     <input type="number" value="1" class="form-control input-lg" name="quantity" id="quantity">
                 </div>
                 <div class="col-lg-10">
-                    <button class="btn btn-primary btn-block">Add to Cart</button>
+                    <button class="btn-cart px-5 btn btn-primary btn-block">Add to Cart</button>
                 </div>
             </div>
         </form>
+
     </div>
 </div>
 @endif

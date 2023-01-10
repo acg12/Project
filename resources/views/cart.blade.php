@@ -2,7 +2,25 @@
 
 @section('title', 'TechSupply | Cart')
 
+@section('css')
+<link rel="stylesheet" href="{{ asset('css/cart.css') }}">
+@endsection
+
 @section('content')
+@if(count($cart) < 1)
+<div class="d-flex flex-column justify-content-center text-center py-2 bg-light">
+    <p class="fs-6 fw-semibold m-0">YOUR TECHSUPPLY CART</p>
+</div>
+<div class="text-center p-5" style="height: 60vh;">
+    <p class="fs-5 fw-light">
+        Your cart is still empty!
+    </p>
+    <h3 class="my-4">Check out our full catalogue here!</h3>
+    <a class="btn-shop btn btn-primary" href="/products" role="button">
+        <h5 class="fw-light">Shop Now</h5>
+    </a>
+</div>
+@else
 <div class="d-flex flex-column px-5 py-3">
     @if($errors->any())
     <div class="alert alert-danger d-flex align-items-center" role="alert">
@@ -33,4 +51,5 @@
 <div class="list-group container-fluid d-flex flex-row text-center">
     <a href="/checkout/{{ Auth::user()->id }}" class="list-group-item list-group-item-action">Checkout</a>
 </div>
+@endif
 @endsection

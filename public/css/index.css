@@ -4,6 +4,7 @@
 
 .banner img {
     width: 100vw;
+    height: 90vh;
     object-fit: cover;
 }
 
@@ -49,9 +50,32 @@
     border: 1px solid black;
 }
 
+a {
+    text-decoration: none;
+}
+
+.card-body:hover {
+    color: #34D84A;
+    transition: ease-out 0.3s;
+}
+
 .card-img {
     border-radius: 0;
     padding: 32px;
     height: 10rem;
     object-fit: cover;
+    transition: ease-out 0.5s;
+}
+
+.card-img:hover {
+    transform: scale(1.1);
+    opacity: 0.5;
+}
+
+.g-col-3 {
+    border: 1px solid black;
+}
+
+.collections {
+    padding: 8vw 5vw;
 }

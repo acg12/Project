@@ -1,0 +1,16 @@
+.btn-shop {
+    background-color: black;
+    border: none;
+    border-radius: 100px;
+    padding: 0.5vw 3vw;
+}
+
+.btn-cart {
+    border: none;
+    border-radius: 25px;
+    background-color: black;
+}
+
+.stock {
+    border-left: 2px solid #34D84A;
+}

@@ -1,0 +1,43 @@
+.btn-shop {
+    background-color: black;
+    border: none;
+    border-radius: 100px;
+    padding: 0.5vw 3vw;
+}
+
+.products-row {
+    margin: 0 auto;
+}
+
+.card-title:hover {
+    color: green;
+    transition: ease-out 0.3s;
+}
+
+.btn-details {
+    background-color: black;
+    border: none;
+    border-radius: 25px;
+}
+
+.card-img {
+    border-radius: 0;
+    padding: 32px;
+    height: 50vh;
+    object-fit: contain;
+    transition: ease-out 0.5s;
+}
+
+.card-img:hover {
+    transform: scale(1.1);
+    opacity: 0.5;
+}
+
+.card {
+    border: none;
+    border-radius: 0;
+}
+
+a {
+    text-decoration: none;
+}

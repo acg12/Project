@@ -30,16 +30,41 @@
     </div>
     @foreach($three as $p)
     <div class="card">
-        <div class="card-body">
-            <p class="fw-bold fs-5">{{ $p->name }}</p>
-            Rp {{ $p->getPrice() }}
-        </div>
-        <img src="{{ $p->image_url }}" class="card-img" alt="...">
+        <a href="/products/{{ $p->id }}">
+            <div class="card-body">
+                <p class="fw-bold fs-5">{{ $p->name }}</p>
+                Rp {{ $p->getPrice() }}
+            </div>
+            <img src="{{ $p->image_url }}" class="card-img" alt="...">
+        </a>
         <div class="card-body">
             <hr>
             <a href="/products/{{ $p->id }}" class="btn btn-primary btn-card-reviews">Learn more</a>
         </div>
     </div>
     @endforeach
+</div>
+<div class="collections container-fluid bg-light">
+    <div class="collections-title text-center pb-5 ">
+        <h1 class="fw-bold">New Year's Collection</h1>
+        <p class="fs-4">Start off this year with a bang!</p>
+    </div>
+    <div class="d-flex flex-row justify-content-around flex-wrap">
+        @foreach($three as $p)
+        <div class="card">
+            <a href="/products/{{ $p->id }}">
+                <div class="card-body">
+                    <p class="fw-bold fs-5">{{ $p->name }}</p>
+                    Rp {{ $p->getPrice() }}
+                </div>
+                <img src="{{ $p->image_url }}" class="card-img" alt="...">
+            </a>
+            <div class="card-body">
+                <hr>
+                <a href="/products/{{ $p->id }}" class="btn btn-primary btn-card-reviews">Learn more</a>
+            </div>
+        </div>
+        @endforeach
+    </div>
 </div>
 @endsection

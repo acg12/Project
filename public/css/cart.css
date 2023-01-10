@@ -1,6 +1,21 @@
-.btn-shop {
+.btn {
     background-color: black;
     border: none;
     border-radius: 100px;
     padding: 0.5vw 3vw;
+}
+
+.card-img {
+    width: 100%;
+    border-radius: 12px;
+}
+
+.btn-update {
+    background-color: black;
+    border: none;
+    border-radius: 25px;
+}
+
+.sticky-bottom {
+    background-color: white;
 }

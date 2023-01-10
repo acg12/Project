@@ -43,6 +43,7 @@ class ProductController extends Controller
     }
 
     public static function getBestSelling($n) {
-        return Product::withCount('transactionDetails')->orderBy('transaction_details_count', 'desc')->limit($n)->get();
+        $results = Product::withCount('transactionDetails')->orderBy('transaction_details_count', 'desc')->limit($n)->get();
+        return $results;
     }
 }

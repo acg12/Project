@@ -58,8 +58,14 @@ class CartController extends Controller
 
     public function showCart(){
         $cart = Cart::all();
+        $subtotal = 0;
 
-        return view('cart', ['cart' => $cart]);
+        foreach($cart as $c) {
+            $subtotal += ($c->product->price * $c->quantity);
+        }
+        $subtotal = number_format($subtotal, 0, ',', '.');
+
+        return view('cart', ['cart' => $cart, 'subtotal' => $subtotal]);
     }
 
     public function updateQuantity(Request $req, $cartId){

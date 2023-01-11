@@ -8,15 +8,15 @@
 
 @section('content')
 <div class="d-flex flex-column justify-content-center text-center py-2 bg-light">
-    <p class="fs-6 fw-semibold m-0">YOUR TECHSUPPLY CART</p>
+    <p class="fs-6 fw-semibold m-0">{{ __('cart.title') }}</p>
 </div>
 @if(count($cart) < 1) <div class="text-center p-5" style="height: 60vh;">
     <p class="fs-5 fw-light">
-        Your cart is still empty!
+        {{ __('cart.empty')}}
     </p>
-    <h3 class="my-4">Check out our full catalogue here!</h3>
+    <h3 class="my-4">{{ __('cart.full_catalogue') }}</h3>
     <a class="btn-shop btn btn-primary" href="/products" role="button">
-        <h5 class="fw-light">Shop Now</h5>
+        <h5 class="fw-light">{{ __('cart.button_shop') }}</h5>
     </a>
     </div>
     @else
@@ -33,12 +33,12 @@
             </div>
             <div class="col-5 text d-flex flex-column justify-content-center">
                 <h5>{{ $c->product->name }}</h5>
-                <p class="m-0">Rp {{ $c->product->getPrice() }}</p>
+                <p class="m-0">{{ __('cart.rp') }} {{ $c->product->getPrice() }}</p>
             </div>
             <div class="col-3 px-4 d-flex flex-column justify-content-center">
                 <form action="/updateCart/{{ $c->id }}" class="d-flex flex-row justify-content-center">
                     <input type="number" id="qty" name="qty" value="{{ $c->quantity }}" style="width:5vw; height:35px; text-align: center;">
-                    <button type="submit" class="px-4 ms-3 btn-update btn btn-primary">Update</button>
+                    <button type="submit" class="px-4 ms-3 btn-update btn btn-primary">{{ __('cart.button_update') }}</button>
                 </form>
             </div>
             <a href="/deleteCart/{{ $c->id }}" class="col-1 text-center d-flex flex-column justify-content-center">
@@ -49,11 +49,11 @@
     </div>
     <div class="sticky-bottom container-fluid d-flex flex-column align-items-end text-center px-5 py-4 pb-5 bg-light">
         <div class="col-6 d-flex flex-row justify-content-between">
-            <p class="fw-bold">Subtotal ({{ count($cart) }} items)</p>
-            <p class="fw-bold">Rp {{ $subtotal }}</p>
+            <p class="fw-bold">{{ __('cart.subtotal') }} ({{ count($cart) }} {{ __('cart.items') }})</p>
+            <p class="fw-bold">{{ __('cart.rp') }} {{ $subtotal }}</p>
         </div>
         <div class="col-6">
-            <a href="/checkout/{{ Auth::user()->id }}" class="btn-checkout btn btn-primary w-100">Checkout</a>
+            <a href="/checkout/{{ Auth::user()->id }}" class="btn-checkout btn btn-primary w-100">{{ __('cart.button_checkout') }}</a>
         </div>
     </div>
     @endif

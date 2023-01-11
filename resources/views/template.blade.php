@@ -23,14 +23,27 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a id="btn-shop" role="button" class="btn btn-primary nav-link px-4" href="/products">Shop Now</a>
+                        <a id="btn-shop" role="button" class="btn btn-primary nav-link px-4" href="/products">{{ __('template.shop_now') }}</a>
                     </li>
                 </ul>
+                <div class="dropdown mx-4">
+                    <div type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        {{ __('template.language') }}
+                    </div>
+                    <ul class="dropdown-menu dropdown-menu-start mt-3">
+                        <li>
+                            <a class="dropdown-item" href="/language/en">English</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="/language/id">Indonesia</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
             <div class="d-flex flex-row align-items-center">
                 <form action="/search" class="d-flex" role="search">
                     <div class="d-flex flex-row align-items-center search-form">
-                        <input id="search-bar" class="form-control" type="search" name="search" placeholder="Search our products" aria-label="Search" value="@yield('search')">
+                        <input id="search-bar" class="form-control" type="search" name="search" placeholder="{{ __('template.search_product') }}" aria-label="Search" value="@yield('search')">
                     </div>
                 </form>
                 <div class="dropdown mx-4">
@@ -42,14 +55,14 @@
                     <ul class="dropdown-menu dropdown-menu-end mt-3">
                         @auth
                         <li>
-                            <a class="dropdown-item" href="/logout">Logout</a>
+                            <a class="dropdown-item" href="/logout"> {{__('template.logout')}} </a>
                         </li>
                         @else
                         <li>
-                            <a class="dropdown-item" href="/login">Login</a>
+                            <a class="dropdown-item" href="/login"> {{__('template.login')}} </a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="/register">Register</a>
+                            <a class="dropdown-item" href="/register">{{__('template.register')}}</a>
                         </li>
                         @endauth
                     </ul>
@@ -74,8 +87,8 @@
             <div class="row">
                 <div class="col-lg-8 col-md-8 col-sm-12">
                     <h6 class="text-uppercase font-weight-bold">TechSupply</h6>
-                    <p>Your one stop solution for electronics.</p>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam suscipit, officia consectetur aliquam nobis atque necessitatibus optio nulla inventore quos autem similique deserunt exercitationem voluptas illum blanditiis id provident? Praesentium!</p>
+                    <p>{{__('template.motto')}}</p>
+                    <p>{{__('template.motto_desc')}}</p>
                 </div>
                 <div>
                     <div class="footer-copyright text-center">TechSupply © 2021 Copyright</div>

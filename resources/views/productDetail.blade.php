@@ -14,11 +14,11 @@
 @if($p == null)
 <div class="text-center p-5" style="height: 60vh;">
     <p class="fs-5 fw-light">
-        Uh-oh! Looks like this item isn't available yet!
+        {{ __('productDetail.not_available') }}
     </p>
-    <h3 class="my-4">Check out our full catalogue here!</h3>
+    <h3 class="my-4">{{ __('productDetail.catalogue') }}</h3>
     <a class="btn-shop btn btn-primary" href="/products" role="button">
-        <h5 class="fw-light">Shop Now</h5>
+        <h5 class="fw-light">{{ __('productDetail.shop') }}</h5>
     </a>
 </div>
 @else
@@ -29,8 +29,8 @@
     <div class="col-6 col-sm-12 col-lg-6 d-flex flex-column justify-content-center p-5">
         <h1 class="card-title pb-4">{{ $p->name }}</h1>
         <p class="card-text">{{ $p->description }}</p>
-        <p class="card-text stock ps-3">{{ $p->stock }} left available in stock</p>
-        <p class="card-title fw-bold pb-3">Rp {{ $p->getPrice() }} one-time purchase</p>
+        <p class="card-text stock ps-3">{{ $p->stock }} {{ __('productDetail.stock') }}</p>
+        <p class="card-title fw-bold pb-3">Rp {{ $p->getPrice() }} {{ __('productDetail.purchase') }}</p>
 
         <form action="/addToCart/{{ $p->id }}" id="form-container">
             <div class="row">
@@ -38,7 +38,7 @@
                     <input type="number" value="1" class="form-control input-lg" name="quantity" id="quantity">
                 </div>
                 <div class="col-lg-10">
-                    <button class="btn-cart px-5 btn btn-primary btn-block">Add to Cart</button>
+                    <button class="btn-cart px-5 btn btn-primary btn-block">{{ __('productDetail.cart') }}</button>
                 </div>
             </div>
         </form>

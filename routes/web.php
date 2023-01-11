@@ -20,6 +20,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [Controller::class, 'index']);
 
+Route::get('/language/{locale}', [Controller::class, 'setLanguage']);
+
 Route::get('/login', function () {
     return view('login');
 })->middleware('guestSecurity');

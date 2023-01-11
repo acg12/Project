@@ -17,7 +17,7 @@ class ProductSeeder extends Seeder
     {
         
         DB::table('products')->insert([
-            'name'=>'logitech gpro keyboard',
+            'name'=>'Logitech G-Pro Keyboard',
             'price'=>1670000,
             'Description'=>'The tournament-proven PRO gaming keyboard, now with advanced GX Blue Clicky mechanical switches. Built to win in collaboration with the worlds top esports athletes.',
             'image_url'=>'https://kopi.dev/static/29f0793444ac5fabe619fea221cb4c0f/logitech-g-pro-x-keyboard.jpg',
@@ -39,7 +39,7 @@ class ProductSeeder extends Seeder
         DB::table('products')->insert([
             'name'=>'Keychron K2',
             'price'=>1710000,
-            'Description'=>'Minimalistic and well build keyboard.',
+            'Description'=>'Minimalistic and well-built keyboard.',
             'image_url'=>'https://ae01.alicdn.com/kf/Hfdcd8306542c495aaffcaef2806a1404p/Keychron-K2-C-V2-Keyboard-Mekanis-USB-Bluetooth-Nirkabel-Frame-Aluminium-Compact-84-Keys-RGB-Backlight.jpg',
             'stock'=> 10,
             'created_at' => Carbon::now(),
@@ -47,9 +47,9 @@ class ProductSeeder extends Seeder
         ]); 
 
         DB::table('products')->insert([
-            'name'=>'SteelSeries ApexPro',
+            'name'=>'Steel Series ApexPro',
             'price'=>1269000,
-            'Description'=>'A well build keyboard, perfect for gaming.',
+            'Description'=>'A well-built keyboard, perfect for gaming.',
             'image_url'=>'https://media.steelseriescdn.com/thumbs/filer_public/b1/d1/b1d1b0d3-30d5-4477-bb8f-bad442cfb894/webprim_apexpro.png__1200x627_crop-fit_optimize_subsampling-2.png',
             'stock'=> 10,
             'created_at' => Carbon::now(),

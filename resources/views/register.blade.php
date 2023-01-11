@@ -14,42 +14,42 @@
 <div class="mx-auto" style="width:40%; padding:4vw;">
     <form action="/register" method="POST">
         @csrf
-        <h3 class="text-center pt-4">Register your account</h3>
-        <p class="text-center pb-3">Please fill in this form to create an account</p>
+        <h3 class="text-center pt-4">{{ __('register.regist') }}</h3>
+        <p class="text-center pb-3">{{ __('register.fill') }}</p>
 
         <div class="form-floating mb-3">
             <input type="text" name="name" class="form-control" id="floatingName" placeholder="Your Name">
-            <label for="floatingName">Name</label>
+            <label for="floatingName">{{ __('register.name') }}</label>
         </div>
         <div class="form-floating mb-3">
             <input type="text" placeholder="Email Address" name="email" class="form-control" id="floatingInput">
-            <label for="floatingInput">Email address</label>
+            <label for="floatingInput">{{ __('register.email') }}</label>
         </div>
         <div class="form-floating mb-3">
             <input type="password" placeholder="Enter Password" name="password" class="form-control" id="floatingPassword">
-            <label for="floatingPassword">Password</label>
+            <label for="floatingPassword">{{ __('register.pass') }}</label>
         </div>
         <div class="form-floating mb-3">
             <input type="password" placeholder="Confirm Password" name="confirm_password" class="form-control" id="floatingconfirm_password">
-            <label for="floatingconfirm_password">Confirm password</label>
+            <label for="floatingconfirm_password">{{ __('register.confirm_pass') }}</label>
         </div>
         <div class="form-floating mb-3">
             <input type="text" name="phone" class="form-control" id="floatingPhone" placeholder="Phone Number">
-            <label for="floatingPhone">Phone number</label>
+            <label for="floatingPhone">{{ __('register.phone') }}</label>
         </div>
         <div class="form-floating mb-3">
             <input type="text" name="address" class="form-control" id="floatingAddress" placeholder="floatingAddress">
-            <label for="floatingAddress">Address</label>
+            <label for="floatingAddress">{{ __('register.address') }}</label>
         </div>
 
-        <p class="py-2">By creating an account, you agree to our 
-            <a href="#" style="text-decoration: none; color: black"><u>Terms & Privacy</u></a>
+        <p class="py-2">{{ __('register.confirmation') }}
+            <a href="#" style="text-decoration: none; color: black"><u>{{ __('register.ts') }}</u></a>
         </p>
-        <button type="submit" class="btn btn-dark py-2 d-grid gap-2 col-12 mx-auto">Register</button>
+        <button type="submit" class="btn btn-dark py-2 d-grid gap-2 col-12 mx-auto">{{ __('register.reg') }}</button>
 
         <div class="register-container py-3">
-            <p class="text-center">Already have an account? Sign in 
-                <a href="/login" style="text-decoration: none; color: black"><u>here</u></a>
+            <p class="text-center">{{ __('register.user') }}
+                <a href="/login" style="text-decoration: none; color: black"><u>{{ __('register.here') }}</u></a>
             </p>
         </div>
     </form>

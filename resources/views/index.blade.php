@@ -10,23 +10,23 @@
 <div class="banner w-100">
     <div class="banner-text d-flex flex-column justify-content-center px-5">
         <h1 class="fw-bold banner-title">
-            High End
+            {{ __('index.banner_title.1') }}
             <br>
-            Tech Accessories
+            {{ __('index.banner_title.2') }}
         </h1>
         <p class="banner-caption">
-            Premium gear for a seamless experience.
+            {{ __('index.banner_caption.1') }}
             <br>
-            Best choice for working or gaming.
+            {{ __('index.banner_caption.2') }}
         </p>
-        <div><a id="btn-shop-banner" role="button" class="btn btn-primary px-4" href="/products">Shop Now</a></div>
+        <div><a id="btn-shop-banner" role="button" class="btn btn-primary px-4" href="/products">{{ __('index.banner_shop_now') }}</a></div>
     </div>
     <img src="{{ Storage::url('images/banner.png') }}" alt="">
 </div>
 <div class="container-fluid reviews d-flex flex-row justify-content-around flex-wrap">
     <div class="reviews-text">
-        <h3 class="fw-bold reviews-title">50,000+ customers love our products</h3>
-        <p>To date, our products have helped 50,000+ people upgrade their equipment and experience a unique and seamless work and/or gaming environment.</p>
+        <h3 class="fw-bold reviews-title">{{ __('index.reviews_title') }}</h3>
+        <p>{{ __('index.reviews_text') }}</p>
     </div>
     @foreach($three as $p)
     <div class="card">
@@ -39,15 +39,15 @@
         </a>
         <div class="card-body">
             <hr>
-            <a href="/products/{{ $p->id }}" class="btn btn-primary btn-card-reviews">Learn more</a>
+            <a href="/products/{{ $p->id }}" class="btn btn-primary btn-card-reviews">{{ __('index.card_learn_more') }}</a>
         </div>
     </div>
     @endforeach
 </div>
 <div class="collections container-fluid bg-light">
     <div class="collections-title text-center pb-5 ">
-        <h1 class="fw-bold">New Year's Collection</h1>
-        <p class="fs-4">Start off this year with a bang!</p>
+        <h1 class="fw-bold">{{ __('index.collections_title') }}</h1>
+        <p class="fs-4">{{ __('index.collections_text') }}</p>
     </div>
     <div class="d-flex flex-row justify-content-around flex-wrap">
         @foreach($three as $p)
@@ -61,7 +61,7 @@
             </a>
             <div class="card-body">
                 <hr>
-                <a href="/products/{{ $p->id }}" class="btn btn-primary btn-card-reviews">Learn more</a>
+                <a href="/products/{{ $p->id }}" class="btn btn-primary btn-card-reviews">{{ __('index.card_learn_more') }}</a>
             </div>
         </div>
         @endforeach

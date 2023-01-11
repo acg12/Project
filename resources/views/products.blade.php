@@ -11,17 +11,17 @@
 @section('content')
 @if($search_query != null)
 <div class="container-fluid text-center pt-4">
-    <p class="fw-bold">Showing results for "{{ $search_query }}"</p>
+    <p class="fw-bold">{{ __('products.showing_results') }} "{{ $search_query }}"</p>
 </div>
 @endif
 @if(count($data) == 0)
 <div class="text-center p-5" style="height: 60vh;">
     <p class="fs-5 fw-light">
-        Uh-oh! Looks like we don't have "{{ $search_query }}" yet!
+        {{ __('products.no_results') }} "{{ $search_query }}"!
     </p>
-    <h3 class="my-4">Check out our full catalogue here!</h3>
+    <h3 class="my-4">{{ __('products.checkout_catalogue') }}</h3>
     <a class="btn-shop btn btn-primary" href="/products" role="button">
-        <h5 class="fw-light">Shop Now</h5>
+        <h5 class="fw-light">{{ __('products.shop_now') }}</h5>
     </a>
 </div>
 @else
@@ -37,7 +37,7 @@
                 </a>
                 <div class="card-body bg-light text-center p-5">
                     <p class="card-text fw-semibold">Rp {{ $data[$i]->getPrice() }}</p>
-                    <a class="btn btn-primary btn-details px-5" href="/products/{{ $data[$i]->id }}">Show details</a>
+                    <a class="btn btn-primary btn-details px-5" href="/products/{{ $data[$i]->id }}">{{ __('products.show_details') }}</a>
                 </div>
             </div>
     </div>

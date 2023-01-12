@@ -5,6 +5,7 @@ return [
     'language' => 'Language',
     'search_product' => 'Search our products',
     'logout' => 'Logout',
+    'transactions' => 'Transactions',
     'login' => 'Login',
     'register' => 'Register',
     'motto' => 'Your one stop solution for electronics.',

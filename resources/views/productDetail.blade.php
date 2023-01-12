@@ -35,7 +35,7 @@
         <form action="/addToCart/{{ $p->id }}" id="form-container">
             <div class="row">
                 <div class="col-lg-2">
-                    <input type="number" value="1" class="form-control input-lg" name="quantity" id="quantity">
+                    <input type="number" min="1" max="{{ $p->stock }}" value="1" class="form-control input-lg" name="quantity" id="quantity">
                 </div>
                 <div class="col-lg-10">
                     <button class="btn-cart px-5 btn btn-primary btn-block">{{ __('productDetail.cart') }}</button>

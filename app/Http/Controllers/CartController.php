@@ -56,6 +56,11 @@ class CartController extends Controller
         return;
     }
 
+    public static function cartIsEmpty($userId) {
+        $carts = Cart::where('user_id', $userId)->get();
+        return (count($carts) == 0) ? true : false;
+    }
+
     public function showCart(){
         $cart = Cart::all();
         $subtotal = 0;

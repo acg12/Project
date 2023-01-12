@@ -5,6 +5,7 @@ return [
     'language' => 'Bahasa',
     'search_product' => 'Cari produk',
     'logout' => 'Keluar',
+    'transactions' => 'Transaksi',
     'login' => 'Masuk',
     'register' => 'Daftar',
     'motto' => 'Solusi Terbaik Anda untuk Elektronik.',

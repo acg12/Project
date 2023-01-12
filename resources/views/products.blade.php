@@ -1,6 +1,6 @@
 @extends('template')
 
-@section('title', 'TechSupply | Product Page')
+@section('title', 'Products | TechSupply')
 
 @section('css')
 <link rel="stylesheet" href="{{ asset('css/products.css') }}">

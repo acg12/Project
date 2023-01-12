@@ -4,7 +4,7 @@
 <!-- <link rel="stylesheet" href="{{ asset('css/template.css') }}"> -->
 @endsection
 
-@section('title', 'TechSupply | Login Page')
+@section('title', 'Login | Tech Supply')
 
 @section('content')
 

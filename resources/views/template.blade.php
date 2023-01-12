@@ -55,6 +55,9 @@
                     <ul class="dropdown-menu dropdown-menu-end mt-3">
                         @auth
                         <li>
+                            <a class="dropdown-item" href="/transactions"> {{__('template.transactions')}} </a>
+                        </li>
+                        <li>
                             <a class="dropdown-item" href="/logout"> {{__('template.logout')}} </a>
                         </li>
                         @else

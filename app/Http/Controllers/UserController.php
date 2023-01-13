@@ -36,15 +36,10 @@ class UserController extends Controller
                     Cookie::queue(Cookie::forget('mycookie'));
                 }
                 Session::put('mysession', $credentials);
-                return redirect('/');
+                return redirect('/login');
             }else{
                 return redirect()->back()->withErrors(['Incorrect email or password']);
             }
-
-            // disini nti bikin if authentication succeed, maka kita akan bikin
-            // session dan/atau cookies
-            // tpi itu di ada di pelajaran lab sesi 4 apa 5 gitu :') jadi klo mau
-            // ntn vbl dulu atau yaudah ntar terakhir aja
         }
     }
 

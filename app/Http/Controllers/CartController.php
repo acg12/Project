@@ -15,7 +15,7 @@ class CartController extends Controller
     // $userId = Auth::user()->id
     // user_id	product_id	quantity
     public function addToCart(Request $req, $prodId) {
-        $userId = 1;
+        $userId = Auth::user()->id;
         $productStock = Product::find($prodId)->first()->stock;
 
         $rules = [
